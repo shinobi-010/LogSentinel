@@ -1,0 +1,10 @@
+name: logsentinel
+services:
+  
+  sentinel:
+   build:
+    context: .
+    dockerfile: dockerfile
+   container_name: hello
+   ports:
+     - 8000:8000
