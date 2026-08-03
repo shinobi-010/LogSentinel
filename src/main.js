@@ -1,2 +1,5 @@
-const express = require('express');
-const fs = require('fs');
+const app = require("./app");
+
+app.listen(3000, () => {
+  console.log("Server running");
+});
