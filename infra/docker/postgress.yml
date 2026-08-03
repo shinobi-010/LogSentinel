@@ -1,12 +1,15 @@
 services:
   postgres:
     image: postgres:18
-    container_name: postgress
+    container_name: postgres
+
     ports:
-      - 5432:5432
+      - "${PORT}:5432"
+
     environment:
-      POSTGRES_DB: ${db}
-      POSTGRES_USER: ${user}
-      POSTGRES_PASSWORD: ${pass}
-    volume:
-      ./data:/var/lib/postgresql/data
+      POSTGRES_DB: ${DB}
+      POSTGRES_USER: ${USER}
+      POSTGRES_PASSWORD: ${PASS}
+
+    volumes:
+      - ./data:/var/lib/postgresql/docker
